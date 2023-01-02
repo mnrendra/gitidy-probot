@@ -1,19 +1,29 @@
 {
   "name": "gitidy",
-  "version": "1.0.0",
-  "private": true,
+  "version": "0.0.0",
+  "private": false,
   "description": "A tool for tidying Gitflow.",
-  "author": "Muhammad Rendra",
+  "author": {
+    "name": "Muhammad Rendra",
+    "email": "mnrendra@users.noreply.github.com",
+    "url": "https://github.com/mnrendra"
+  },
   "license": "ISC",
-  "homepage": "https://github.com//",
-  "keywords": [
-    "probot",
-    "github",
-    "probot-app"
-  ],
+  "homepage": "https://github.com/mnrendra/gitidy#readme",
+  "repository": "github:mnrendra/gitidy",
+  "bugs": {
+    "url" : "https://github.com/mnrendra/gitidy/issues",
+    "email": "mnrendra@users.noreply.github.com"
+  },
+  "keywords": ["gitidy", "gitflow", "probot", "github", "probot-app", "github-app", "git"],
+  "main": "./dist",
   "scripts": {
     "build": "tsc",
-    "start": "probot run ./lib/index.js",
+    "start": "probot run .",
+    "dev": "npm run build && npm start",
+    "reinstall": "rm -rf ./dist ./node_modules ./tsconfig.tsbuildinfo && npm i",
+    "reinstall:relock": "rm -rf ./package-lock.json && npm run reinstall",
+    "reinstall:prune": "npm cache clean --force && npm cache verify && npm run reinstall:relock",
     "test": "jest"
   },
   "dependencies": {
