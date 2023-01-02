@@ -1,0 +1,17 @@
+**/node_modules
+**/.git*
+**/*.md
+**/LICENSE
+**/.vscode
+**/npm-debug.log
+**/coverage
+**/.env*
+**/.editorconfig
+# **/dist
+**/*.pem
+Dockerfile
+**/src
+**/*test*
+**/*jest*
+**/tsconfig.json
+**/tsconfig.tsbuildinfo
