@@ -1,14 +1,24 @@
 # gitidy
 
-> A GitHub App built with [Probot](https://github.com/probot/probot) that A tool for tidying Gitflow.
+> A tool for tidying Gitflow.
 
 ## Setup
 
+1. Install dependencies:
 ```sh
-# Install dependencies
+# Install in development machine
 npm install
 
-# Run the bot
+# Or, install in production server
+npm ci
+```
+
+2. Run this app:
+```sh
+# Run in development mode
+npm run dev
+
+# Or, run in production mode
 npm start
 ```
 
