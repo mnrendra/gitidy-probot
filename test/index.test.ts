@@ -1,7 +1,9 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
+
 import nock from 'nock'
 import { Probot, ProbotOctokit } from 'probot'
+
 import myProbotApp from '../src'
 import payload from './fixtures/issues.opened.json'
 
