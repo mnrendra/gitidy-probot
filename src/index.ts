@@ -1,19 +1,11 @@
-import { Probot } from 'probot'
+import { Probot, ApplicationFunctionOptions } from 'probot'
 
-export = (app: Probot) => {
-  app.on('issues.opened', async (context) => {
-    const issueComment = context.issue({
-      body: 'Thanks for opening this issue!',
-    })
+import router from './router'
+import gitidy from './gitidy'
+import events from './events'
 
-    console.log('issueComment:', issueComment)
-
-    await context.octokit.issues.createComment(issueComment)
-  })
-
-  // For more information on building apps:
-  // https://probot.github.io/docs/
-
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
+export = (app: Probot, { getRouter }: ApplicationFunctionOptions) => {
+  const gitidyRouter = router(getRouter)('/gitidy')
+  gitidy(gitidyRouter)
+  events(app)
 }
